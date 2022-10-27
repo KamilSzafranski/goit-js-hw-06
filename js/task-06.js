@@ -1,12 +1,11 @@
 const input = document.querySelector("#validation-input");
 
-const someEvent = (event) => {
+
+input.addEventListener("blur", (event) => {
   const inputLenght = event.currentTarget.value.split("").length;
-  if (inputLenght < 7) {
-    return input.classList.add("valid");
+  if (inputLenght < 6) {
+    return input.classList.add("invalid");
   }
 
-  return input.classList.add("invalid");
-};
-
-input.addEventListener("blur", someEvent);
+  return input.classList.add("valid");
+});

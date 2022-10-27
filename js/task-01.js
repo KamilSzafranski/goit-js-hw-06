@@ -1,22 +1,13 @@
-const animalList = document.querySelector(".item:first-child");
-const animalNestedList = document.querySelector(".item:first-child ul");
 
-const productList = document.querySelector(".item:nth-child(2)");
-const productNestedList = document.querySelector(".item:nth-child(2) ul");
 
-const technologiesList = document.querySelector(".item:last-child");
-const technologiesNestedList = document.querySelector(".item:last-child ul");
+const ulChildren = document.querySelector("#categories").children;
 
-const numberOfCategories =
-  document.querySelector("#categories").children.length;
+console.log(`Numbers of categories ${ulChildren.length}`);
 
-console.log(`Numbers of categories ${numberOfCategories}
+for (let child of ulChildren){
+  console.log(child)
+  console.log(`Category: ${child.firstElementChild.textContent}`);
+  console.log(`Element: ${child.lastElementChild.children.length}`);
+}
 
-Category: ${animalList.firstElementChild.textContent}
-Element: ${animalNestedList.children.length} 
 
-Category: ${productList.firstElementChild.textContent}
-Element: ${productNestedList.children.length} 
-
-Category: ${technologiesList.firstElementChild.textContent}
-Element: ${technologiesNestedList.children.length} `);
